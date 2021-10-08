@@ -104,7 +104,7 @@ public:
     }
 
     ~shared_pointer() {
-        if (ptr_ && count_ptr->reduce_count()) {
+        if (ptr_ && count_ptr->reduce_count()==0) {
             delete ptr_;
             delete count_ptr;
         }
